@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class FightModel {
 
+
 	private static final FightModel INSTANCE = new FightModel();
 	private boolean mainScreen = false, speech = true, moves = false, moveUsed = false, change = false,
 			pack = false, playerControl = true, enemyHit = false, pokemonChanged = false, run = false, 
@@ -13,7 +14,9 @@ public class FightModel {
 			ballRight = 52 * L, writingLeft = 10 * L, writingRight = 55 * L, ppWidth = 30 * L, 
 			upperWriting = 78 * L, lowerWriting = 88 * L, expPercent, EnemyHPPercent, PlayerHPPercent,
 			playerCurrent = 0, enemyCurrent = 0;
-	
+	private boolean playerTurn = true, playable = true;
+	private int accuracy, base, damage, temppercent, choice;
+
 	private String spoken;
 	
 	private ArrayList<PokemonState> playerParty = new ArrayList<PokemonState>();
@@ -27,6 +30,59 @@ public class FightModel {
 		return INSTANCE;
 	}
 	
+	public int getChoice(){
+		return choice;
+	}
+	public void setChoice(int x){
+		choice = x;
+	}
+	public boolean isPlayerTurn() {
+		return playerTurn;
+	}
+
+	public void setPlayerTurn(boolean playerTurn) {
+		this.playerTurn = playerTurn;
+	}
+
+	public boolean isPlayable() {
+		return playable;
+	}
+
+	public void setPlayable(boolean playable) {
+		this.playable = playable;
+	}
+
+	public int getAccuracy() {
+		return accuracy;
+	}
+
+	public void setAccuracy(int accuracy) {
+		this.accuracy = accuracy;
+	}
+
+	public int getBase() {
+		return base;
+	}
+
+	public void setBase(int base) {
+		this.base = base;
+	}
+
+	public int getDamage() {
+		return damage;
+	}
+
+	public void setDamage(int damage) {
+		this.damage = damage;
+	}
+
+	public int getTemppercent() {
+		return temppercent;
+	}
+
+	public void setTemppercent(int temppercent) {
+		this.temppercent = temppercent;
+	}
 	public boolean getMainScreen() {
 		return mainScreen;
 	}

@@ -1,5 +1,6 @@
 package Model;
 
+
 public class PokemonState {
 	
 	/*
@@ -9,9 +10,10 @@ public class PokemonState {
 	 * this will be used for every party pokemon
 	 * in particular this should help control how moves affect the pokemon
 	 * */
-	private int id, level, xp, xpMax, hp, hpMax, attack, defence, speed, specialAttack, specialDefense, PP[], PPMax[];
+	private int id, level, xp, xpMax, hp, hpMax, attack, defense, speed, specialAttack, specialDefense, PP[], PPMax[];
 	private boolean poison, frozen, paralysed, confused, burned, sleeping;
 	private String pokemon, name, type, moves [], frontPic, backPic;
+	private PokemonState pkmn;
 	
 	public PokemonState(int id, String pokemon, String name, int level, String type, 
 			int xp, int xpMax, int hp, int hpMax, int attack, int defense, int speed,
@@ -31,7 +33,7 @@ public class PokemonState {
 		this.hp = hp;
 		this.hpMax = hpMax;
 		this.attack = attack;
-		this.defence = defense;
+		this.defense = defense;
 		this.speed = speed;
 		this.specialAttack = specialAttack;
 		this.specialDefense = specialDefense;
@@ -51,6 +53,22 @@ public class PokemonState {
 		this.backPic = backPic;
 	}
 	
+	public String toString()
+	{
+		String x = id + " " + pokemon + " " + name + " " + level + " " + type + " " + 
+		xp + " " + xpMax + " " + hp + " " + hpMax + " " + attack + " " + defense + " " + speed + " " + 
+		specialAttack + " " + specialDefense + " " + moves[0] + " " + moves[1] + " " + moves[2] + " " + 
+		moves[3] + " " + PPMax[0] + " " + PPMax[1] + " " + PPMax[2] + " " +
+		PPMax[3] + " " + PP[0] + " " + PP[1] + " " + PP[2] + " " + PP[3] + " " + 
+		poison + " " + frozen + " " + paralysed + " " + confused + " " + burned + " " +
+		sleeping + " " + frontPic + " " + backPic;
+		
+		return x;
+	}
+	public PokemonState clone(PokemonState x) {
+	    this.pkmn = x.pkmn; // you can access 
+	    return pkmn;
+	  }
 	public String getMove(int x)
 	{
 		return moves[x];
@@ -139,14 +157,14 @@ public class PokemonState {
 		attack = x;
 	}
 	
-	public int getDefence()
+	public int getDefense()
 	{
-		return defence;
+		return defense;
 	}
 	
 	public void setDefence(int x)
 	{
-		defence = x;
+		defense = x;
 	}
 	
 	public int getSpeed()

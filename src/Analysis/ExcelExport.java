@@ -20,7 +20,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 public class ExcelExport {
 
-	@SuppressWarnings("deprecation")
+	@SuppressWarnings({ "deprecation", "resource" })
 	public static void main(String[] args) {
 		try {
 			FileOutputStream fileOut = new FileOutputStream("Analysis1.xls");

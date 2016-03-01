@@ -20,7 +20,7 @@ public class Driver {
 		ArrayList<PokemonState> enemyPokemon = new ArrayList<PokemonState>();
 		
 		currentPokemon = PC.createPlayer("Player1.xlsx");
-		enemyPokemon = PC.createPlayer("Enemy1.xlsx");
+		enemyPokemon = PC.createPlayer("Player1.xlsx");
 		currentPokemon = FC.runBattle(currentPokemon, enemyPokemon);
 	}	
 
